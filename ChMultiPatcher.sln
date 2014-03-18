@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FC9E5AD-8B1F-4F71-B395-AF42FFD49752}"
+	ProjectSection(SolutionItems) = preProject
+		ChMultiPatcher.vsmdi = ChMultiPatcher.vsmdi
+		Local.testsettings = Local.testsettings
+		README.md = README.md
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChMultiPatcher", "ChMultiPatcher\ChMultiPatcher.csproj", "{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ChMultiPatcherModelling", "ChMultiPatcherModelling\ChMultiPatcherModelling.modelproj", "{D19BE28A-0BB5-4470-A237-55BD578C7592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChPatchCreator", "PatchCreator\ChPatchCreator.csproj", "{B005393B-5987-4C1D-A69D-DDDA7C179C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchCreatorTests", "PatchCreatorTests\PatchCreatorTests.csproj", "{1742D056-0593-42E4-AF7F-52BE52FA9A7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChMultiPatcherGui", "ChMultiPatcherGui\ChMultiPatcherGui.csproj", "{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Debug|x86.ActiveCfg = Debug|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Debug|x86.Build.0 = Debug|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Release|Any CPU.ActiveCfg = Release|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Release|x86.ActiveCfg = Release|x86
+		{E1367C36-58BD-42AE-8BA9-C2052D40F9F0}.Release|x86.Build.0 = Release|x86
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D19BE28A-0BB5-4470-A237-55BD578C7592}.Release|x86.ActiveCfg = Release|Any CPU
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Debug|x86.ActiveCfg = Debug|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Debug|x86.Build.0 = Debug|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Release|Any CPU.ActiveCfg = Release|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Release|x86.ActiveCfg = Release|x86
+		{B005393B-5987-4C1D-A69D-DDDA7C179C97}.Release|x86.Build.0 = Release|x86
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1742D056-0593-42E4-AF7F-52BE52FA9A7B}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Debug|x86.ActiveCfg = Debug|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Debug|x86.Build.0 = Debug|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Release|Any CPU.ActiveCfg = Release|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Release|x86.ActiveCfg = Release|x86
+		{6B36B3E1-166F-4F9E-B2B2-940A190C88FF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ChMultiPatcher.vsmdi
+	EndGlobalSection
+EndGlobal

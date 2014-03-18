@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="e4d7c918-f6fc-4267-ab0f-9c71ef9157ea" name="Patcher" linkedPackageId="a9bdbfa5-c572-4568-8849-0d54724c7e2d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="c03ae9f9-99b4-4f8f-b663-455888ecde44">
+      <elementDefinition Id="87c131d8-ecfb-433e-928a-16f410c61a99" />
+      <body>
+
+- Every patch created must be included into the Patcher executable. Thus making the Patcher bigger with every patch which is included.
+
+- The PatchCreator has to build the MultiPatcher every time a new Patch is created, to include the current patch into the binary
+
+- The patches the PatchCreator creates are binary serialized objects, including all information necessary. Those objects need to be stored on disk and included into the MultiPatcher Project as a resource
+
+- Created MultiPatcher must include information of the Project (Game/Tool etc) it is able to Patch.</body>
+      <annotatedElements>
+        <subsystemMoniker Id="73627192-3ea0-4405-9747-c0c48cc6025d" LastKnownName="PatchCreator" />
+      </annotatedElements>
+    </comment>
+    <comment Id="08461023-c42b-4a50-ba2f-664d72f149d9">
+      <elementDefinition Id="da62307f-8eee-44fe-932d-804fa8613c24" />
+      <body>- The MultiPatcher must be one single standalone-executable, containing all available patches. No dlls or other file dependencies. All patches are included in the binary as resources.
+
+- MultiPatcher can patch any old revision (version) to the most current revision (version).
+
+- Game that should be patched should be chosen automatically via registry or config file in AppData, or manually by the user.
+
+- MultiPatcher must check the chosen target if its valid to be patched with this build of MultiPatcher. (CRC32 Checksums, filenames etc). Must abort if invalid.
+</body>
+      <annotatedElements>
+        <subsystemMoniker Id="3f8c1bc7-ac11-4a02-b34e-f1e500ac1b2e" LastKnownName="MultiPatcher" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="3f8c1bc7-ac11-4a02-b34e-f1e500ac1b2e" name="MultiPatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f1981e3-b2b9-4613-8c0c-55ec95ee1c2e" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="10feb6b4-0041-4740-81d5-2f3f04e464d7" name="1. Create Patch from Rev A to Rev B" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2ecf83c9-038e-4e83-8ccc-32761152e84f" />
+        <subjects>
+          <subsystemMoniker Id="73627192-3ea0-4405-9747-c0c48cc6025d" LastKnownName="PatchCreator" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="338c53fa-b66d-4805-b57a-f5145aae56e2" name="Build Server" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="452fcd5f-f9cc-472c-840c-6b59431d5006" />
+        <targetEnds>
+          <association Id="92cf23f9-2df8-4d83-98f1-aba7c4644780" isDerived="false" sourceEndRoleName="Build Server" targetEndRoleName="Create Patch from Rev A to Rev B" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10feb6b4-0041-4740-81d5-2f3f04e464d7" LastKnownName="1. Create Patch from Rev A to Rev B" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e3a08a8e-e7cf-4752-94aa-d5e25023590e" name="Build Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="907ffec7-3c63-4d46-b71a-9cbc332a1528" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a74aad62-359f-434a-a4e6-82c625ee1893" name="Create Patch from Rev A to Rev B" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4c4846e3-9089-48f2-83b9-529ebc634d5a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9aa710d9-8a1f-4c6e-a67c-814bf50871ad" />
+          </association>
+          <association Id="93ed30ea-e9b5-4802-9496-8c5271e23e29" isDerived="false" sourceEndRoleName="Build Server" targetEndRoleName="Build new MultiPatcher executable with the Patch included as a resource" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="14c6dddd-54f6-4178-a060-251994af5922" LastKnownName="2. Build new MultiPatcher executable with the Patch included as a resource" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c08d342a-634c-4db7-9ab3-50819b2a844e" name="Build Server" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="60a7436b-3a38-4d31-b29e-dd9cc81f73de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e0546130-c90e-4d50-b6d7-8142c9e3eb25" name="Build new MultiPatcher executable with the Patch included as a resource" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d639b255-95aa-4acb-ab8b-fe6af257b488" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3f173bf5-f21e-4b6d-b3f2-7ae3142c120c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a3add682-e472-4a80-bcf2-a0c507429bad" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a7bfad1b-700d-481c-88f7-d58ec74dd7a6" />
+        <targetEnds>
+          <association Id="8ae027fa-a7b1-4454-9ec6-27a128480912" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Double click Multipatcher Executable, select Target Directory manually or automatically, and Patch the chosen revision to the most current version." isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="acb9ae5b-b23b-444f-8da9-36184553716f" LastKnownName="Double click Multipatcher Executable, select Target Directory manually or automatically, and Patch the chosen revision X to the most current version Y." />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="626c4c45-af03-412c-ba68-1137c908e949" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="337c2320-a517-4985-a02f-0adbe678f2a3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="caa89e50-709c-469b-80d4-4ea7dedcfbff" name="Double click Multipatcher Executable, select Target Directory manually or automatically, and Patch the chosen revision to the most current version." isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8ae11564-8b0d-420e-8a52-a4df25c922c0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b13e718a-e699-4d53-ad80-b7638254df30" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="73627192-3ea0-4405-9747-c0c48cc6025d" name="PatchCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="852a9042-6aab-4177-8e38-1188d48b563b" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="acb9ae5b-b23b-444f-8da9-36184553716f" name="Double click Multipatcher Executable, select Target Directory manually or automatically, and Patch the chosen revision X to the most current version Y." isAbstract="false" isLeaf="false">
+        <elementDefinition Id="56ed39fb-bb64-4b2d-af53-933c2d0cd486" />
+        <subjects>
+          <subsystemMoniker Id="3f8c1bc7-ac11-4a02-b34e-f1e500ac1b2e" LastKnownName="MultiPatcher" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="14c6dddd-54f6-4178-a060-251994af5922" name="2. Build new MultiPatcher executable with the Patch included as a resource" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="853c8293-d351-4d99-8f4f-eab7e71c0219" />
+        <subjects>
+          <subsystemMoniker Id="73627192-3ea0-4405-9747-c0c48cc6025d" LastKnownName="PatchCreator" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a9bdbfa5-c572-4568-8849-0d54724c7e2d" name="ChMultiPatcherModelling">
+    <elementDefinition Id="6f390322-1b2c-4d4e-b074-681ed1b629c4" />
+    <profileInstances>
+      <packageHasProfileInstances Id="fc7cf489-c971-414b-a91e-599ab7d8f5cf">
+        <profileInstance Id="4cac1030-7f7b-452d-9340-3fa631fad6af" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="fd804774-44e3-45b7-ac63-29c62c8218ff">
+        <profileInstance Id="fce10cba-d998-423d-bd28-5e0023720c69" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

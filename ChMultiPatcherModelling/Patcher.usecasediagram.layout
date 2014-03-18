@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="Patcher">
+  <useCaseModelRootMoniker Id="e4d7c918-f6fc-4267-ab0f-9c71ef9157ea" />
+  <nestedChildShapes>
+    <actorShape Id="9cca3d5a-db34-40bf-b37f-76ae7aa64386" absoluteBounds="4.5, 4.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="338c53fa-b66d-4805-b57a-f5145aae56e2" LastKnownName="Build Server" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="cf42251f-a487-43dd-97d2-4bc9c122340e" absoluteBounds="9, 4.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="a3add682-e472-4a80-bcf2-a0c507429bad" LastKnownName="User" />
+      <relativeChildShapes />
+    </actorShape>
+    <commentShape Id="96249477-0ae0-42d0-8e79-7409e3431062" absoluteBounds="0.5, 0.75, 3.375, 2.75" customColor="251, 247, 200">
+      <commentMoniker Id="c03ae9f9-99b4-4f8f-b663-455888ecde44" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentShape Id="7bdbf5ad-7887-479d-992e-6ab9523d7228" absoluteBounds="5.125, 0.75, 3.25, 2.625" customColor="251, 247, 200">
+      <commentMoniker Id="08461023-c42b-4a50-ba2f-664d72f149d9" />
+      <relativeChildShapes />
+    </commentShape>
+    <SubsystemShape Id="882bfe17-0326-4e97-875b-96a4213ce1fc" absoluteBounds="7, 5.25, 3, 2.875" customColor="White">
+      <subsystemMoniker Id="3f8c1bc7-ac11-4a02-b34e-f1e500ac1b2e" LastKnownName="MultiPatcher" />
+      <nestedChildShapes>
+        <useCaseShape Id="f0480db8-ae61-49c6-a765-8dbfbf69d3ca" absoluteBounds="7.625, 5.75, 2.25, 1.25" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="acb9ae5b-b23b-444f-8da9-36184553716f" LastKnownName="Double click Multipatcher Executable, select Target Directory manually or automatically, and Patch the chosen revision X to the most current version Y." />
+          <relativeChildShapes />
+        </useCaseShape>
+      </nestedChildShapes>
+    </SubsystemShape>
+    <commentConnector edgePoints="[(7.6875 : 3.375); (7.6875 : 5.25)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="7bdbf5ad-7887-479d-992e-6ab9523d7228" />
+        <SubsystemShapeMoniker Id="882bfe17-0326-4e97-875b-96a4213ce1fc" />
+      </nodes>
+    </commentConnector>
+    <useCaseAssociationConnector edgePoints="[(9.17307692307692 : 5); (8.93955813778431 : 5.75893605220099)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="8ae027fa-a7b1-4454-9ec6-27a128480912" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="cf42251f-a487-43dd-97d2-4bc9c122340e" />
+        <useCaseShapeMoniker Id="f0480db8-ae61-49c6-a765-8dbfbf69d3ca" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <SubsystemShape Id="dd5984e7-ad05-499e-8c73-0cf034d6a87b" absoluteBounds="1.625, 5.625, 3.25, 2.875" customColor="White">
+      <subsystemMoniker Id="73627192-3ea0-4405-9747-c0c48cc6025d" LastKnownName="PatchCreator" />
+      <nestedChildShapes>
+        <useCaseShape Id="016cea96-d152-42da-abb2-1108bb21864d" absoluteBounds="1.875, 6.25, 1.125, 1.125" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="10feb6b4-0041-4740-81d5-2f3f04e464d7" LastKnownName="1. Create Patch from Rev A to Rev B" />
+          <relativeChildShapes />
+        </useCaseShape>
+        <useCaseShape Id="44138356-d822-4cb2-9e50-b4723729e87a" absoluteBounds="3.625, 6.125, 1, 1.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="14c6dddd-54f6-4178-a060-251994af5922" LastKnownName="2. Build new MultiPatcher executable with the Patch included as a resource" />
+          <relativeChildShapes />
+        </useCaseShape>
+      </nestedChildShapes>
+    </SubsystemShape>
+    <commentConnector edgePoints="[(2.75 : 3.5); (2.75 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="96249477-0ae0-42d0-8e79-7409e3431062" />
+        <SubsystemShapeMoniker Id="dd5984e7-ad05-499e-8c73-0cf034d6a87b" />
+      </nodes>
+    </commentConnector>
+    <useCaseAssociationConnector edgePoints="[(4.5 : 4.97297297297297); (2.85729118188854 : 6.4380916485859)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="92cf23f9-2df8-4d83-98f1-aba7c4644780" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="9cca3d5a-db34-40bf-b37f-76ae7aa64386" />
+        <useCaseShapeMoniker Id="016cea96-d152-42da-abb2-1108bb21864d" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(4.67647058823529 : 5); (4.32682010328815 : 6.1888116488203)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="93ed30ea-e9b5-4802-9496-8c5271e23e29" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="9cca3d5a-db34-40bf-b37f-76ae7aa64386" />
+        <useCaseShapeMoniker Id="44138356-d822-4cb2-9e50-b4723729e87a" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

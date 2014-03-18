@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="05af0fc0-ffb1-46d3-a5c1-c39d621e511b" name="Patch" linkedPackageId="2cb829e7-1d33-4cb3-a7d7-007e9cd48335" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b5a49a61-a513-4f7a-94c4-4ccdc5b9c503" name="Patch" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e557f8c5-f4fc-48a2-94e2-97ee1e097267" />
+        <ownedAttributesInternal>
+          <property Id="bdcbb054-a9c7-4af3-a306-2174c897fca4" name="m_FileDiffs" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1fb1c88a-477e-4779-b265-aff48383f6e1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="29ef24b1-6124-4868-ab42-1e6876cdb9be" LastKnownName="List&lt;FileDiff&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c9266303-25b6-4027-8af4-5726f3fa2642" name="FileDiff" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>This is a Diff representation for one certain file for one certain revision to anoter revision.</description>
+        <elementDefinition Id="32ab87d5-6334-4915-8bdd-755c682100d6" />
+        <ownedAttributesInternal>
+          <property Id="5ab7c4c3-ede2-4f3d-8847-cbe68a482829" name="m_Filename" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="806eda23-0a19-45e3-8309-7a0c3638f67e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a52de4e8-9581-4c00-98d3-3c88c75b87d1" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="d5d3a143-53d9-43c3-9e44-5104f89144cf" name="m_FromRev" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6e9aeb97-3442-4bdb-86dc-0ebc89743c39" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="24368684-cc46-4e93-8f3f-f8e96d485280" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="3fe4777d-1c97-4ea4-aaf0-fd97f22235ca" name="m_ToRev" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fe988a4d-861b-4447-a79f-a2856808d7ae" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="99b94d8e-fc01-4ad8-a090-5b2ab4aea01d" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="0d4adbdb-5ba2-4785-a734-c05b4c42da2d" name="m_Diff" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="db6b6e59-8326-4380-8bc3-564a7222b8f2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4fcb6e0a-8e20-4946-a1e4-c9830f701fc0" LastKnownName="Byte[]" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="4fcb6e0a-8e20-4946-a1e4-c9830f701fc0" name="Byte[]" isAbstract="false" isLeaf="false" cachedFullName="Byte[]">
+        <elementDefinition Id="d0da21cd-9c66-4afc-84ff-322cd230189d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="99b94d8e-fc01-4ad8-a090-5b2ab4aea01d" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="a60a664b-d52f-44fa-a17c-a8606bf39d5a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="24368684-cc46-4e93-8f3f-f8e96d485280" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="a60a664b-d52f-44fa-a17c-a8606bf39d5a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a52de4e8-9581-4c00-98d3-3c88c75b87d1" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="45570e9d-4981-403a-860b-cf2f559753ea" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="29ef24b1-6124-4868-ab42-1e6876cdb9be" name="List&lt;FileDiff&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;FileDiff&gt;">
+        <elementDefinition Id="72ccec4f-0c44-409a-b096-139b4b70cb0d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="af473a47-cbec-498e-ab9a-c681f3f0ab28" name="MultiPatcher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5a49fb07-9f59-41c4-997e-7cffd2882ff5" />
+        <ownedAttributesInternal>
+          <property Id="218df471-6c24-4629-b819-17c8965db67c" name="m_AvailablePatches" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6635d438-28dc-412d-8913-f49548eb7f71" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3c2fb9bf-b999-4803-bba1-7f233670072a" LastKnownName="Dictionary&lt;int,int&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="caab8bf7-148c-4827-8442-065dc025b908" name="CreatePatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="88a879b4-9803-4a18-863a-7e73036a8e91" />
+          </operation>
+          <operation Id="84de4986-3b94-462a-98ab-cedccf6eb547" name="ApplyPatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2cd45236-ad26-4209-97d1-abb344d201c3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3c2fb9bf-b999-4803-bba1-7f233670072a" name="Dictionary&lt;int,int&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;int,int&gt;">
+        <elementDefinition Id="e6c1439e-f32f-4dde-ab30-139d35cdd9a5" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="2cb829e7-1d33-4cb3-a7d7-007e9cd48335" name="ChMultiPatcherModelling">
+    <elementDefinition Id="6f390322-1b2c-4d4e-b074-681ed1b629c4" />
+    <profileInstances>
+      <packageHasProfileInstances Id="01c836e4-ce93-468e-8e7f-44b1af2753f6">
+        <profileInstance Id="56b19aac-1833-42a2-9042-ab1499a0a0d2" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f3056733-68bd-432f-a143-6a4487e50437">
+        <profileInstance Id="1ace137a-5b46-4396-9856-47e127b35797" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
