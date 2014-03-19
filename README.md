@@ -12,16 +12,16 @@ Components
 ---
 The Chimera Multipatcher currently consists of these components:
 
- - The PatchCreator.exe: Command line tool to create the patch.
- - The MultiPatcher UI: Provides a nice looking user interface to select the target directory to apply the patch on. Also, it verifies if the target directory is valid to be patched.
- - The Multipatcher CLI Tool: Command line tool to apply the patch on a directory.    
+ - The ChPatchCreator.exe CLI Tool: Command line tool to create the patch.
+ - The ChMultiPatcher.exe CLI Tool: Command line tool to apply the patch on a directory.
+ - The ChMultipatcherGui.exe MultiPatcher UI: Provides a nice looking user interface to select the target directory to apply the patch on. Also, it verifies if the target directory is valid to be patched.    
 
 Usage
 ---
 
 **Patch Creator**
 
-    PatchCreator.exe ProjectName FromRevision ToRevision FromRevisionSourceDirectory ToRevisionSourceDirectory StripPrefixDirectorySlashNumber [Patch target file or path]
+    ChPatchCreator.exe ProjectName FromRevision ToRevision FromRevisionSourceDirectory ToRevisionSourceDirectory StripPrefixDirectorySlashNumber [Patch target file or path]
     
 Arguments:
 
